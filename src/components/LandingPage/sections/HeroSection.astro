@@ -1,0 +1,73 @@
+---
+import wcyLogo from '../../../assets/img/wcy_logo.png'
+---
+<section class="flex items-center pt-[25vh] xl:pt-0 xl:h-screen relative" id="hero-section">
+    <div class="hero-bg w-96" id="box">
+        <span class="block mb-2">Username</span>
+        <span class="block text-2xl border rounded px-2 pt-1 border-gray-900">admin</span>
+
+        <span class="block mb-2 mt-3">Password</span>
+        <span class="block text-2xl border rounded px-2 pt-1 border-gray-900 h-10" id="pass">*********</span>
+
+        <span class="mt-5 text-center block text-2xl rounded px-5 pt-3 pb-3 bg-gray-900 w-full" id="signin-btn">Sign in</span>
+    </div>
+    <div class="w-4/5 mx-auto font-semibold relative z-10">
+        <h1 class="text-4xl xl:text-8xl trailing-xl">
+            Koło Naukowe <br />
+            <span class="">
+                Cyber Security
+            </span>
+        </h1>
+        <h2 class="mt-10 text-xl opacity-70">
+            Wydziału Cybernetyki Wojskowej Akademii Technicznej
+        </h2>
+        <div class="mt-7">
+            <img src={wcyLogo} class="w-20" />
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-bg {
+        @apply fixed top-1/2 left-3/4 text-gray-700 select-none;
+        transform: translate(-50%, -50%) skew(0deg, 10deg);
+    }
+</style>
+
+<script>
+    import {animate, scroll, ScrollOffset} from 'motion'
+    const passEl = document.getElementById('pass')
+    const signInBtn = document.getElementById('signin-btn')
+
+    scroll(
+        animate((progress) => {
+            passEl.innerText = '*'.repeat(progress*10)
+            }
+        ),
+        {
+            offset: ["start start", "0.1 start"],
+            target: document.getElementById('hero-section')
+        }
+    )
+    scroll(
+        animate(signInBtn, {background: '#15803d'}),
+        {
+            offset: ["0.2 start", "0.3 start"],
+            target: document.getElementById('hero-section')
+        }
+    )
+    scroll(
+        animate((progress) => signInBtn.textContent = progress === 1 ? 'Access granted' : 'Sign in'),
+        {
+            offset: ["0.2 start", "0.3 start"],
+            target: document.getElementById('hero-section')
+        }
+    )
+    scroll(
+        animate("#box", {left: '100%', transform: 'translateX(100%)'}),
+        {
+            offset: ["0.5 start", "end start"],
+            target: document.getElementById('hero-section')
+        }
+    )
+</script>

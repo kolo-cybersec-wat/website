@@ -1,0 +1,19 @@
+---
+const links = [
+    ['/', ' O Kole'],
+    ['/news', 'Aktualności'],
+    ['/', 'Osiągnięcia i członkowie']
+]
+
+---
+<div class="fixed top-0 left-0 w-full h-20 border-b border-gray-800 z-50 bg-dark">
+    <nav class="w-4/5 mx-auto h-full">
+        <ul class="flex justify-center h-full">
+            {links.map(([href, label]) => (
+                    <li class=" h-full">
+                        <a class="border-l border-r border-dark px-4 cursor-pointer h-full flex items-center focus:opacity-70 hover:opacity-70">{label}</a>
+                    </li>
+            ))}
+        </ul>
+    </nav>
+</div>
