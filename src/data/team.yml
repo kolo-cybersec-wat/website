@@ -1,0 +1,53 @@
+boardMembers:
+  - title: plut. pchor.
+    name: Iwo Chorzępa
+    role: Przewodniczący Koła
+    bio: lorem ipsum
+    links:
+      linkedIn: https://linkedin.com/in/profile
+      github: https://github.com/profile
+  - title: ''
+    name: Michał Oręziak
+    role: Wiceprzewodniczący Koła
+    bio: lorem ipsum
+    links:
+      linkedIn: https://linkedin.com/in/profile
+      github: https://github.com/profile
+  - title: ''
+    name: Julia Ołowniuk
+    role: Sekretarz Koła
+    bio: lorem ipsum
+    links:
+      linkedIn: https://linkedin.com/in/profile
+      github: https://github.com/profile
+supervisor:
+  title: dr. inż.
+  name: Zbigniew Świerczyński
+  bio: |
+    Posiada ponad dwudziestoletnie doświadczenie w projektowaniu, wdrażaniu i badaniu bezpieczeństwa, 
+    wydajności oraz stabilności systemów teleinformatycznych. 
+    Absolwent Wydziału Cybernetyki Wojskowej Akademii Technicznej na kierunku Informatyka. 
+    Doktor nauk technicznych w zakresie informatyki – teleinformatyka. 
+    Adiunkt w Instytucie Teleinformatyki i Cyberbezpieczeństwa Wydziału Cybernetyki Wojskowej Akademii Technicznej,
+    gdzie prowadzi zajęcia z zakresu bezpieczeństwa systemów teleinformatycznych. 
+    Wyróżniony tytułem Zasłużony Nauczyciel Akademicki WAT 
+    oraz dyplomem za najlepsze wyniki w ocenie okresowej nauczycieli akademickich Wydziału Cybernetyki za lata 2020-21.
+    Kierownik zespołu, który w 2012 roku przygotował
+    i przeprowadził kontrolowany atak na systemy infrastruktury krytycznej
+    w ramach pierwszych w Polsce ćwiczeń z ochrony cyberprzestrzeni Cyber-Exe Polska 2012.
+    Kierownik zespołu, który w 2016 roku po wykryciu masowego pobierania danych osobowych przez kancelarie komornicze,
+    z ramienia WAT przeprowadził analizę oraz opracował doraźne wytyczne dotyczące technicznych aspektów bezpiecznego korzystania z rejestru PESEL.
+    Od 2014 - roku wielokrotnie wchodził w skład zespołu reprezentującego Polskę na międzynarodowych, 
+    ocenianych ćwiczeniach Locked Shields, z którym w roku w 2014 roku zajął pierwsze miejsce
+    (wygrywając między innymi z zespołem reagowania na cyberataki Paktu Północnoatlantyckiego - NATO CIRC).
+    W roku 2019 i 2021 w ramach wspomnianych ćwiczeń pełnił rolę lidera grupy zajmującej się ochroną routerów i zapór sieciowych.
+  links:
+    linkedIn: https://linkedin.com/in/profile
+    github: https://github.com/profile
+members:
+  - name: Joe Doe
+    link: https://example.com
+    image:
+      gravatarUsername: someuser
+
+

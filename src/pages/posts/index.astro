@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import {Image} from 'astro:assets'
+import Layout from "../../layouts/Layout.astro";
+const posts = await getCollection('posts');
+
+---
+<Layout title={"Aktualności"}>
+    <div class="mt-32 w-4/5 mx-auto">
+        <h1 class="text-4xl">Aktualności</h1>
+        <ul class="mt-10 grid md:grid-cols-4 gap-10">
+             {posts.map((post, i) => (
+                    <a href={`/posts/${post.slug}`} class="block">
+                        <Image
+                                src={post.data.image}
+                                alt={`${post.data.title} - obrazek`}
+                                class={`h-32 border rounded w-full object-cover ${post.data.imageClassName}`} />
+                        <div class="pt-2">
+                            <span>{post.data.title}</span>
+                            <span class="mt-1 block text-gray-600 text-xs">{post.data.date.toLocaleDateString("pl-PL")}</span>
+                        </div>
+                    </a>
+            ))}
+        </ul>
+    </div>
+</Layout>
+

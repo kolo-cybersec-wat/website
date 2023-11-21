@@ -1,0 +1,171 @@
+---
+import {getCollection} from "astro:content";
+import {EventInput} from "@fullcalendar/core";
+import 'tippy.js/dist/tippy.css';
+
+import otherCalendarEvents from '../../data/calendarEvents.yml'
+
+const meetings = await getCollection('meetings');
+const meetingEvents = meetings.map(meeting => ({
+    groupId: 'meeting',
+    title: meeting.data.title,
+    start: meeting.data.dateStart,
+    end: meeting.data.dateEnd,
+    url: `/meetings/${meeting.slug}`,
+    color: '#1D4ED8'
+} satisfies EventInput))
+
+const calendarEvents: EventInput = [
+    ...meetingEvents,
+    ...otherCalendarEvents
+]
+
+
+// HACK(micorix):
+// - astro doesn't support templating in script tags
+// - define:vars attr wraps script content in IIFE
+//      and imports must be top-level, so it fails
+---
+<div id="calendar-events" style="display: none">{JSON.stringify(calendarEvents)}</div>
+
+
+<div id="calendar-root">
+    <span id="calendar-loader" class="block text-center">Ładowanie kalendarza...</span>
+    <noscript>
+        <span class="block text-center">Aby zobaczyć kalendarz włącz obsługę JavaScript w przeglądarce</span>
+    </noscript>
+</div>
+
+<template id="monthly-calendar-help-template">
+    <span class="block text-center mb-6 flex items-center" id="monthly-calendar-help">
+        Kliknij na
+        <span class="w-2 h-2 mx-2 rounded-full bg-accent inline-block"></span>
+        spotkanie, aby zobaczyć szczegóły
+    </span>
+</template>
+
+<script>
+    import {Calendar} from '@fullcalendar/core'
+    import dayGridPlugin from '@fullcalendar/daygrid'
+    import listViewPlugin from '@fullcalendar/list'
+    import tippy from 'tippy.js';
+    import {
+        CALENDAR_VIEWS,
+        filterEvents,
+        getInitialViewName, insertHelp,
+        setViewSearchParam
+    } from "./calendarUtils";
+
+    const calendarRoot = document.querySelector("#calendar-root") as HTMLElement
+    const calendarEvents = JSON.parse(
+        document.querySelector('#calendar-events').textContent
+    )
+
+
+    const calendar: Calendar = new Calendar(calendarRoot, {
+        plugins: [dayGridPlugin, listViewPlugin],
+        contentHeight: 'auto',
+        initialView: getInitialViewName(),
+        headerToolbar: {
+            center: [CALENDAR_VIEWS.MONTHLY_CALENDAR, CALENDAR_VIEWS.MEETINGS_LIST].join(',')
+        },
+        buttonText: {
+            today: 'Dzisiaj'
+        },
+        locale: "pl",
+        firstDay: 1, // monday
+        events: calendarEvents,
+
+        viewDidMount: ({view}) => {
+            document.querySelector('#calendar-loader').classList.add('hidden')
+            if(view.type === CALENDAR_VIEWS.MONTHLY_CALENDAR)
+                insertHelp('#monthly-calendar-help-template', '#monthly-calendar-help')
+        },
+        datesSet: ({view}) => {
+            setViewSearchParam(view.type)
+
+            const isListView = view.type === CALENDAR_VIEWS.MEETINGS_LIST;
+            filterEvents(view.calendar, isListView);
+
+            const helpEl = document.querySelector("#monthly-calendar-help")
+            if(helpEl) helpEl.classList.toggle('hidden', isListView)
+        },
+        views: {
+            [CALENDAR_VIEWS.MONTHLY_CALENDAR]: {
+                type: 'dayGridMonth',
+                buttonText: 'Kalendarz',
+                eventDidMount: info => {
+                    tippy(info.el, {
+                        content: info.event.title,
+                        placement: 'top',
+                    });
+                },
+            },
+            [CALENDAR_VIEWS.MEETINGS_LIST]: {
+                type: 'listYear',
+                buttonText: 'Lista spotkań',
+            }
+        },
+    });
+
+    const mobileViewThreshold = 768 // tw md
+    if(window.innerWidth < mobileViewThreshold)
+        calendar.changeView(CALENDAR_VIEWS.MEETINGS_LIST)
+
+
+    calendar.render()
+
+
+</script>
+<style>
+    #calendar-root {
+        @apply w-full h-full;
+        --fc-today-bg-color: theme('colors.gray.300');
+        --fc-neutral-bg-color: theme('colors.white');
+        --fc-list-event-hover-bg-color: theme('colors.gray.300');
+        --fc-button-bg-color: theme('colors.gray.300');
+        --fc-button-text-color: theme('colors.black');
+        --fc-button-border-color: theme('colors.gray.300');
+        --fc-button-hover-bg-color: theme('colors.gray.300');
+        --fc-button-hover-border-color: theme('colors.gray.300');
+        --fc-button-active-bg-color: theme('colors.accent');
+        --fc-button-active-border-color: theme('colors.gray.300');
+    }
+
+    :global(.fc-button-primary:not(:disabled).fc-button-active), :global(.fc .fc-button-primary:not(:disabled):active) {
+        color: theme('colors.white') !important;
+    }
+
+    #calendar-root :global(.fc-listYear-view) {
+        --fc-border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: theme('screens.md')) {
+        #calendar-root :global(.fc-toolbar) {
+            display: block;
+        }
+
+        #calendar-root :global(.fc-toolbar-chunk) {
+            @apply my-1;
+        }
+
+        #calendar-root :global(.fc-list-day-cushion) {
+            display: flex;
+            flex-direction: column;
+        }
+        #calendar-root :global(.fc-list-event) {
+            display: flex;
+            flex-direction: column;
+        }
+        #calendar-root :global(.fc-list-event td) {
+            display: block;
+            width: 100%;
+            border: none;
+            text-align: center;
+            padding: 4px 14px;
+        }
+        #calendar-root :global(.fc-list-event .fc-list-event-graphic) {
+            order: -1;
+        }
+    }
+</style>

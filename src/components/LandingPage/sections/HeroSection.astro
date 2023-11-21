@@ -1,15 +1,19 @@
 ---
+
+import {Image} from "astro:assets";
+import {Sprite} from "astro-icon";
 import wcyLogo from '../../../assets/img/wcy_logo.png'
+import clubLogo from '../../../assets/img/kolo_cybersecurity_logo.png'
 ---
 <section class="flex items-center pt-[25vh] xl:pt-0 xl:h-screen relative" id="hero-section">
-    <div class="hero-bg w-96" id="box">
+    <div class="hero-bg w-96 opacity-10 xl:opacity-100" id="box">
         <span class="block mb-2">Username</span>
         <span class="block text-2xl border rounded px-2 pt-1 border-gray-900">admin</span>
 
         <span class="block mb-2 mt-3">Password</span>
         <span class="block text-2xl border rounded px-2 pt-1 border-gray-900 h-10" id="pass">*********</span>
 
-        <span class="mt-5 text-center block text-2xl rounded px-5 pt-3 pb-3 bg-gray-900 w-full" id="signin-btn">Sign in</span>
+        <span class="mt-5 text-center block text-2xl rounded px-5 pt-3 pb-3 text-gray-900 border-2 w-full" id="signin-btn">Sign in</span>
     </div>
     <div class="w-4/5 mx-auto font-semibold relative z-10">
         <h1 class="text-4xl xl:text-8xl trailing-xl">
@@ -21,9 +25,13 @@ import wcyLogo from '../../../assets/img/wcy_logo.png'
         <h2 class="mt-10 text-xl opacity-70">
             Wydziału Cybernetyki Wojskowej Akademii Technicznej
         </h2>
-        <div class="mt-7">
-            <img src={wcyLogo} class="w-20" />
+        <div class="mt-7 flex">
+            <Image alt="Logo Koła CyberSecurity" src={clubLogo} class="w-20" />
+            <Image alt="Logo Wydziału Cybernetyki" src={wcyLogo} class="ml-5 w-20 object-contain" />
         </div>
+    </div>
+    <div id="chevron-down">
+        <Sprite name="bi:chevron-down" class="w-20 h-20" />
     </div>
 </section>
 
@@ -32,10 +40,32 @@ import wcyLogo from '../../../assets/img/wcy_logo.png'
         @apply fixed top-1/2 left-3/4 text-gray-700 select-none;
         transform: translate(-50%, -50%) skew(0deg, 10deg);
     }
+
+    #chevron-down {
+        @apply hidden xl:block;
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        animation: chevron-animation 4s infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes chevron-animation {
+        0% {
+            transform: translateX(-50%) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) translateY(1rem);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
 </style>
 
 <script>
-    import {animate, scroll, ScrollOffset} from 'motion'
+    import {animate, scroll} from 'motion'
     const passEl = document.getElementById('pass')
     const signInBtn = document.getElementById('signin-btn')
 
@@ -50,7 +80,7 @@ import wcyLogo from '../../../assets/img/wcy_logo.png'
         }
     )
     scroll(
-        animate(signInBtn, {background: '#15803d'}),
+        animate(signInBtn, {background: '#1D4ED8', color: 'white', opacity:0.8}),
         {
             offset: ["0.2 start", "0.3 start"],
             target: document.getElementById('hero-section')
@@ -67,6 +97,13 @@ import wcyLogo from '../../../assets/img/wcy_logo.png'
         animate("#box", {left: '100%', transform: 'translateX(100%)'}),
         {
             offset: ["0.5 start", "end start"],
+            target: document.getElementById('hero-section')
+        }
+    )
+    scroll(
+        animate("#chevron-down", {opacity: 0}),
+        {
+            offset: ["start start", "0.1 start"],
             target: document.getElementById('hero-section')
         }
     )

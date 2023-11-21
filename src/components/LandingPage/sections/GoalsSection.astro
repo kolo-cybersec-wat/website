@@ -1,4 +1,5 @@
 ---
+import {Image} from "astro:assets";
 import contestIcon from '../../../assets/img/goals-icons/contest.png'
 import knowledgeSharingIcon from '../../../assets/img/goals-icons/knowledge_sharing.png'
 import schoolBoardIcon from '../../../assets/img/goals-icons/school_board.png'
@@ -28,7 +29,7 @@ const goalsList = [
         <h1 class="text-4xl font-semibold text-center">Cele Koła</h1>
         <div class="mt-16 grid xl:grid-cols-2">
             <div>
-                <div class="prose text-gray-100">
+                <div class="prose">
                     <p>
                         Celem koła jest przede wszystkim poszerzenie wiedzy członków na temat cyberbezpieczeństwa, a także uczestnictwo w różnego rodzaju konkursach, które umożliwią im zdobycie praktycznych umiejętności. Koło jest także miejscem, w którym członkowie mogą dzielić się swoimi pomysłami i wiedzą, a także uczyć się od siebie nawzajem.
                     </p>
@@ -43,7 +44,7 @@ const goalsList = [
             <div class="xl:mt-0 mt-20">
                 {goalsList.map(({icon, label}) => (
                     <div class="mb-10 flex items-center">
-                        <img src={icon} class="w-16" />
+                        <Image alt="" src={icon} class="w-16" />
                         <span class="ml-10 font-bold">{label}</span>
                     </div>
                 ))}

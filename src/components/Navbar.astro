@@ -1,19 +1,48 @@
 ---
-const links = [
-    ['/', ' O Kole'],
-    ['/news', 'Aktualności'],
-    ['/', 'Osiągnięcia i członkowie']
-]
+import {Sprite} from "astro-icon";
+import {createLinkTargetProps, navbarLinkItems } from "../data/navigation";
+
+const linkClassName = 'px-4 cursor-pointer h-full flex items-center focus:opacity-70 hover:opacity-70'
 
 ---
-<div class="fixed top-0 left-0 w-full h-20 border-b border-gray-800 z-50 bg-dark">
-    <nav class="w-4/5 mx-auto h-full">
-        <ul class="flex justify-center h-full">
-            {links.map(([href, label]) => (
-                    <li class=" h-full">
-                        <a class="border-l border-r border-dark px-4 cursor-pointer h-full flex items-center focus:opacity-70 hover:opacity-70">{label}</a>
-                    </li>
-            ))}
-        </ul>
-    </nav>
+<div class="fixed top-0 left-0 w-full h-20 border-b border-gray-300 z-50 bg-gray-100">
+  <div class="w-full h-full relative">
+      <nav class="md:w-4/5 mx-auto h-full flex items-center">
+          <div class="flex md:hidden justify-between w-full px-10">
+              <a href="/">Koło CyberSecurity WAT</a>
+              <button id="toggle-menu-btn">
+                  <Sprite name="cil:hamburger-menu" class="w-5 h-5" id="menu-open-icon" />
+                  <Sprite name="cil:x" class="w-5 h-5 hidden" id="menu-close-icon" />
+              </button>
+          </div>
+          <ul id="menu-collapse" class="hidden absolute md:static bottom-0 top-full md:flex flex-col md:flex-row md:justify-center h-full w-full">
+              {navbarLinkItems.map(({href, label, openInNewTab}) => (
+                      <li class="h-full w-full md:w-auto bg-gray-100 flex md:block justify-center py-1 last:pb-4 md:last:pb-1 last:border-b md:last:border-b-0 border-gray-400">
+                          <a
+                                  href={href}
+                                  class={linkClassName}
+                                  {...createLinkTargetProps(openInNewTab)}
+                          >
+                              {label}
+                          </a>
+                      </li>
+              ))}
+          </ul>
+      </nav>
+  </div>
 </div>
+
+<script>
+    const toggleMenu = () => {
+        const menuEl = document.querySelector('#menu-collapse');
+        const shouldBeHidden = menuEl.classList.contains('flex')
+        menuEl.classList.toggle('hidden', shouldBeHidden)
+        menuEl.classList.toggle('flex', !shouldBeHidden)
+
+        document.querySelector('#menu-close-icon').classList.toggle('hidden')
+        document.querySelector('#menu-open-icon').classList.toggle('hidden')
+
+    }
+
+    document.querySelector('#toggle-menu-btn').addEventListener('click', toggleMenu)
+</script>

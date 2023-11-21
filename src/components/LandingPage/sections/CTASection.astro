@@ -1,18 +1,31 @@
-<section class="mt-[25vh] mb-40" id="cta-section">
-    <div class="w-4/5 mx-auto font-semibold grid xl:grid-cols-2">
+---
+import {Sprite} from 'astro-icon'
+---
+
+<section class="mt-[25vh] mb-20" id="cta-section">
+    <div class="w-4/5 mx-auto grid xl:grid-cols-2">
         <div class="xl:border-r border-gray-400 xl:pr-10">
-            <h2 class="text-2xl">Jesteś studentem WAT?</h2>
+            <h2 class="text-2xl font-semibold">Jesteś studentem WAT?</h2>
             <p class="mt-10">
-                W celu dołączenia do Koła, skontaktuj się z XXX lub YYY.
+                Chcesz zostać członkiem Koła CyberSecurity?
+                <br />
+                Dołącz do zespołu Koła na MS Teams, tam znajdziesz dalsze instrukcje.
+                <div class="mt-5">
+                    <button class="px-3 py-1 bg-[#464EB8] text-white flex items-center">
+                        <Sprite name="mdi:microsoft-teams" class="text-white w-5 h-5" />
+                    <span class="ml-2">Dołacz do zespołu na MS Teams</span>
+                </button>
+                </div>
             </p>
         </div>
         <div class="xl:pl-10 pt-10 xl:pt-0">
-            <h2 class="text-2xl">Jesteś przedstawicielem biznesu czy NGO?</h2>
+            <h2 class="text-2xl font-semibold">Jesteś przedstawicielem/ką biznesu czy NGO?</h2>
             <p class="mt-10">
-                Zapraszamy do współpracy.
-                <br/>
-                <br/>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad corporis doloribus eaque enim exercitationem facere iure rerum sit ullam voluptas. Illum nesciunt perspiciatis rem sed. Atque pariatur qui repudiandae sequi?
+                Koło CyberSecurity współpracuje z partnerami z sektora biznesu, <br/>
+                których wsparcie sprawia, że możemy się rozwijać.
+                <br /><br />
+                Jeśli chcesz wesprzeć działalność koła w charakterze partnera czy sponsora, <br />
+                prosimy o kontakt pod kolo.cybersecurity@wat.edu.pl.
             </p>
         </div>
     </div>

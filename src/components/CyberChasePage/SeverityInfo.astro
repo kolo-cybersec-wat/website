@@ -1,0 +1,56 @@
+---
+import {Sprite} from "astro-icon";
+//
+export const SEVERITY_LEVEL = {
+    RADIOACTIVE: 'RADIOACTIVE',
+    HIGH: 'HIGH',
+    MODERATE: 'MODERATE',
+    LOW: 'LOW'
+};
+
+type SeverityLevel = string;
+//
+interface SeverityMappingItem {
+    name: string
+    iconName: string
+    className: string
+}
+
+const severityMappings: Record<string, SeverityMappingItem> = {
+    [SEVERITY_LEVEL.RADIOACTIVE]: {
+        name: 'radioactive',
+        iconName: 'mdi:radioactive',
+        className: 'text-red-500'
+    },
+    [SEVERITY_LEVEL.HIGH]: {
+        name: 'high',
+        iconName: 'jam:triangle-danger-f',
+        className: 'text-orange-500'
+    },
+    [SEVERITY_LEVEL.MODERATE]: {
+        name: 'moderate',
+        iconName: 'ci:warning',
+        className: 'text-yellow-500'
+    },
+    [SEVERITY_LEVEL.LOW]: {
+        name: 'low',
+        iconName: 'ic:round-info',
+        className: 'text-blue-500'
+    }
+};
+
+interface Props {
+	severityLevel: SeverityLevel
+}
+const { severityLevel } = Astro.props;
+//
+const {name, className, iconName} = severityMappings[severityLevel]
+---
+
+ <div class="text-sm text-gray-500 flex items-center">
+						<span class="mr-1">severity:</span>
+	 <span class={`flex items-center ${className}`}>
+							<Sprite name={iconName} class="w-5 h-5"/>
+							<span class="ml-1 uppercase">{name}</span>
+						</span>
+					</div>
