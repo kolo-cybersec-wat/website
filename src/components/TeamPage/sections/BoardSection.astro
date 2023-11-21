@@ -1,24 +1,20 @@
 ---
-import aboutImage from '../../../assets/img/about-image.jpg'
 import BoardMemberCard from "../BoardMemberCard.astro";
-// export interface Props {
-//     name: string;
-//     role: string;
-//     bio: string;
-// }
 
 const { boardMembers } = Astro.props;
-
 ---
+
 <section class="mt-[15vh] relative z-10">
-    <div class="w-4/5 mx-auto">
-      <h2 class="text-3xl text-center font-bold">Zarząd koła</h2>
-      <div class="">
-          <div class="mt-20 grid md:grid-cols-3 gap-10">
-              {boardMembers.map(boardMember => (
-                  <BoardMemberCard boardMember={boardMember} />
-              ))}
-          </div>
+  <div class="w-4/5 mx-auto">
+    <h2 class="text-3xl text-center font-bold">Zarząd koła</h2>
+    <div class="">
+      <div class="mt-20 grid md:grid-cols-3 gap-10">
+        {
+          boardMembers.map((boardMember) => (
+            <BoardMemberCard boardMember={boardMember} />
+          ))
+        }
       </div>
     </div>
+  </div>
 </section>

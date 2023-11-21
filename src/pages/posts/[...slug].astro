@@ -1,28 +1,33 @@
 ---
-import {getCollection} from 'astro:content';
+import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import {Image} from "astro:assets";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
-    const posts = await getCollection('posts');
-    return posts.map(entry => ({
-        params: {slug: entry.slug}, props: {entry},
-    }));
+  const posts = await getCollection("posts");
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 }
 
-const {entry} = Astro.props;
-const {Content} = await entry.render();
+const { entry } = Astro.props;
+const { Content } = await entry.render();
 ---
+
 <Layout title={`${entry.data.title} - aktualności koła WCY WAT`}>
-   <div class="w-4/5 mx-auto mt-32">
-       <div class="prose mx-auto">
-           <Image
-                   src={entry.data.image}
-                   alt={`${entry.data.title} - obrazek`}
-                   class={`h-48 border rounded w-full object-cover ${entry.data.imageClassName}`} />
-           <span class="mt-1 mb-2 block text-gray-600 text-lg">{entry.data.date.toLocaleDateString("pl-PL")}</span>
-           <h1>{entry.data.title}</h1>
-           <Content />
-       </div>
-   </div>
+  <div class="w-4/5 mx-auto mt-32">
+    <div class="prose mx-auto">
+      <Image
+        src={entry.data.image}
+        alt={`${entry.data.title} - obrazek`}
+        class={`h-48 border rounded w-full object-cover ${entry.data.imageClassName}`}
+      />
+      <span class="mt-1 mb-2 block text-gray-600 text-lg"
+        >{entry.data.date.toLocaleDateString("pl-PL")}</span
+      >
+      <h1>{entry.data.title}</h1>
+      <Content />
+    </div>
+  </div>
 </Layout>

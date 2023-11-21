@@ -1,6 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import yaml from '@rollup/plugin-yaml';
+import yaml from "@rollup/plugin-yaml";
 
 import react from "@astrojs/react";
 
@@ -8,9 +8,9 @@ import react from "@astrojs/react";
 export default defineConfig({
   integrations: [tailwind(), react()],
   experimental: {
-    assets: true
+    assets: true,
   },
   vite: {
-    plugins: [yaml()]
-  }
+    plugins: [yaml()],
+  },
 });

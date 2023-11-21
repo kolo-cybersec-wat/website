@@ -1,25 +1,35 @@
 ---
-import {Image} from "astro:assets";
-import aboutImage from '../../../assets/img/about-image.jpg'
+import { Image } from "astro:assets";
+import aboutImage from "../../../assets/img/about-image.jpg";
 ---
+
 <section class="mt-[25vh] relative z-10" id="about-section">
-    <div class="w-4/5 mx-auto grid xl:grid-cols-2 gap-20">
-        <div class="">
-            <Image alt="" class="w-full h-64 bg-gray-800 rounded-xl" src={aboutImage} />
-        </div>
-        <div class="">
-            <h1 class="text-4xl">O Kole CyberSecurity</h1>
-            <p class="prose mt-5">
-                Celem koła jest przede wszystkim poszerzenie wiedzy członków na temat cyberbezpieczeństwa,
-                a także uczestnictwo w różnego rodzaju konkursach, które umożliwią im zdobycie praktycznych umiejętności.
-                Koło jest także miejscem, w którym członkowie mogą dzielić się swoimi pomysłami i wiedzą, a także uczyć się od siebie nawzajem.
-                <br />
-                <br />
-                Jeśli jesteś studentką/studentem Wojskowej Akademii Technicznej, dołącz do nas!
-            </p>
-            <div class="mt-10">
-                <a class="px-5 py-3 rounded bg-blue-700 text-white" href="#cta-section">Dowiedz się, jak dołączyć</a>
-            </div>
-        </div>
+  <div class="w-4/5 mx-auto grid xl:grid-cols-2 gap-20">
+    <div class="">
+      <Image
+        alt=""
+        class="w-full h-64 bg-gray-800 rounded-xl"
+        src={aboutImage}
+      />
     </div>
+    <div class="">
+      <h1 class="text-4xl">O Kole CyberSecurity</h1>
+      <p class="prose mt-5">
+        Celem koła jest przede wszystkim poszerzenie wiedzy członków na temat
+        cyberbezpieczeństwa, a także uczestnictwo w różnego rodzaju konkursach,
+        które umożliwią im zdobycie praktycznych umiejętności. Koło jest także
+        miejscem, w którym członkowie mogą dzielić się swoimi pomysłami i
+        wiedzą, a także uczyć się od siebie nawzajem.
+        <br />
+        <br />
+         Jeśli jesteś studentką/studentem Wojskowej Akademii Technicznej, dołącz
+        do nas!
+      </p>
+      <div class="mt-10">
+        <a class="px-5 py-3 rounded bg-blue-700 text-white" href="#cta-section"
+          >Dowiedz się, jak dołączyć</a
+        >
+      </div>
+    </div>
+  </div>
 </section>

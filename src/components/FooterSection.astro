@@ -1,28 +1,25 @@
 ---
-import {LinkItem} from "../types";
-import {createLinkTargetProps } from "../data/navigation";
+import { LinkItem } from "../types";
+import { createLinkTargetProps } from "../data/navigation";
 export interface Props {
-    sectionTitle: string
-    linkItems: LinkItem[]
+  sectionTitle: string;
+  linkItems: LinkItem[];
 }
 
-const {sectionTitle, linkItems} = Astro.props
+const { sectionTitle, linkItems } = Astro.props;
 ---
 
 <div class="">
-    <div class="border-b-2 border-gray-300 mb-3 pb-2">
-        {sectionTitle}
-    </div>
-    <div class="text-gray-600 grid gap-y-1">
-        {linkItems.map(({href, label, openInNewTab}) => (
-                <a
-                        href={href}
-                        class="block"
-                        {...createLinkTargetProps(openInNewTab)}
-                >
-                    {label}
-                </a>
-        ))}
-    </div>
-
+  <div class="border-b-2 border-gray-300 mb-3 pb-2">
+    {sectionTitle}
+  </div>
+  <div class="text-gray-600 grid gap-y-1">
+    {
+      linkItems.map(({ href, label, openInNewTab }) => (
+        <a href={href} class="block" {...createLinkTargetProps(openInNewTab)}>
+          {label}
+        </a>
+      ))
+    }
+  </div>
 </div>

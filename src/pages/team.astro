@@ -1,18 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from "../components/LandingPage/sections/HeroSection.astro";
+import Layout from "../layouts/Layout.astro";
 import BoardSection from "../components/TeamPage/sections/BoardSection.astro";
-import GoalsSection from "../components/LandingPage/sections/GoalsSection.astro";
-import CTASection from "../components/LandingPage/sections/CTASection.astro";
-
-import teamData from '../data/team.yml'
-import MembersSection from "../components/TeamPage/sections/MembersSection.astro";
+import teamData from "../data/team.yml";
+// import MembersSection from "../components/TeamPage/sections/MembersSection.astro";
 import SupervisorSection from "../components/TeamPage/sections/SupervisorSection.astro";
-
 ---
 
 <Layout title="Członkowie i osiągnięcia">
-	<BoardSection boardMembers={teamData.boardMembers} />
-	<SupervisorSection supervisor={teamData.supervisor} />
-	<!--<MembersSection />-->
+  <BoardSection boardMembers={teamData.boardMembers} />
+  <SupervisorSection supervisor={teamData.supervisor} />
+  <!--<MembersSection />-->
 </Layout>

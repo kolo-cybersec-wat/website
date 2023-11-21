@@ -1,28 +1,30 @@
 ---
-
-import '../style/global.css'
+import "../style/global.css";
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title: pageTitle } = Astro.props;
 
-const fullSiteTitle = `${pageTitle} | Koło CyberSecurity WCY WAT`
+const fullSiteTitle = `${pageTitle} | Koło CyberSecurity WCY WAT`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="generator" content={Astro.generator} />
-	<title>{fullSiteTitle}</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-gray-100 text-dark">
-<slot />
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullSiteTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-dark">
+    <slot />
+  </body>
 </html>

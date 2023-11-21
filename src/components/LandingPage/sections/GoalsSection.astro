@@ -1,78 +1,91 @@
 ---
-import {Image} from "astro:assets";
-import contestIcon from '../../../assets/img/goals-icons/contest.png'
-import knowledgeSharingIcon from '../../../assets/img/goals-icons/knowledge_sharing.png'
-import schoolBoardIcon from '../../../assets/img/goals-icons/school_board.png'
-import lectureIcon from '../../../assets/img/goals-icons/lecture.png'
+import { Image } from "astro:assets";
+import contestIcon from "../../../assets/img/goals-icons/contest.png";
+import knowledgeSharingIcon from "../../../assets/img/goals-icons/knowledge_sharing.png";
+import schoolBoardIcon from "../../../assets/img/goals-icons/school_board.png";
+import lectureIcon from "../../../assets/img/goals-icons/lecture.png";
 const goalsList = [
-    {
-        icon: contestIcon,
-        label: 'Uczestnictwo w konkursach'
-    },
-    {
-        icon: knowledgeSharingIcon,
-        label: 'Dzielenie się swoimi pomysłami i wiedzą'
-    },
-    {
-        icon: schoolBoardIcon,
-        label: 'Popularyzacja cyberbezpieczeństwa np. w szkołach średnich'
-    },
-    {
-        icon: lectureIcon,
-        label: 'Uczestnictwo w konferencjach i spotkaniach branżowych'
-    }
-]
-
+  {
+    icon: contestIcon,
+    label: "Uczestnictwo w konkursach",
+  },
+  {
+    icon: knowledgeSharingIcon,
+    label: "Dzielenie się swoimi pomysłami i wiedzą",
+  },
+  {
+    icon: schoolBoardIcon,
+    label: "Popularyzacja cyberbezpieczeństwa np. w szkołach średnich",
+  },
+  {
+    icon: lectureIcon,
+    label: "Uczestnictwo w konferencjach i spotkaniach branżowych",
+  },
+];
 ---
-<section class="mt-40" id="goals-section">
-    <div class="w-4/5 mx-auto">
-        <h1 class="text-4xl font-semibold text-center">Cele Koła</h1>
-        <div class="mt-16 grid xl:grid-cols-2">
-            <div>
-                <div class="prose">
-                    <p>
-                        Celem koła jest przede wszystkim poszerzenie wiedzy członków na temat cyberbezpieczeństwa, a także uczestnictwo w różnego rodzaju konkursach, które umożliwią im zdobycie praktycznych umiejętności. Koło jest także miejscem, w którym członkowie mogą dzielić się swoimi pomysłami i wiedzą, a także uczyć się od siebie nawzajem.
-                    </p>
-                    <p>
-                        Koło Cyber Security na WAT prowadzi również działania na rzecz popularyzacji cyberbezpieczeństwa w szerszym gronie, na przykład poprzez organizowanie warsztatów i prezentacji w szkołach średnich lub uczestniczenie w różnego rodzaju konferencjach i spotkaniach branżowych.
-                    </p>
-                    <p>
-                        Podsumowując, koło Cyber Security na Wojskowej Akademii Technicznej skupia się na poszerzaniu wiedzy i umiejętności z zakresu cyberbezpieczeństwa, współpracy z innymi kołami naukowymi i firmami oraz popularyzacji tych zagadnień wśród szerszej publiczności. Celem koła jest również udział w różnego rodzaju konkursach, które pozwolą członkom zdobyć praktyczne doświadczenie.
-                    </p>
-                </div>
-            </div>
-            <div class="xl:mt-0 mt-20">
-                {goalsList.map(({icon, label}) => (
-                    <div class="mb-10 flex items-center">
-                        <Image alt="" src={icon} class="w-16" />
-                        <span class="ml-10 font-bold">{label}</span>
-                    </div>
-                ))}
-            </div>
 
+<section class="mt-40" id="goals-section">
+  <div class="w-4/5 mx-auto">
+    <h1 class="text-4xl font-semibold text-center">Cele Koła</h1>
+    <div class="mt-16 grid xl:grid-cols-2">
+      <div>
+        <div class="prose">
+          <p>
+            Celem koła jest przede wszystkim poszerzenie wiedzy członków na
+            temat cyberbezpieczeństwa, a także uczestnictwo w różnego rodzaju
+            konkursach, które umożliwią im zdobycie praktycznych umiejętności.
+            Koło jest także miejscem, w którym członkowie mogą dzielić się
+            swoimi pomysłami i wiedzą, a także uczyć się od siebie nawzajem.
+          </p>
+          <p>
+            Koło Cyber Security na WAT prowadzi również działania na rzecz
+            popularyzacji cyberbezpieczeństwa w szerszym gronie, na przykład
+            poprzez organizowanie warsztatów i prezentacji w szkołach średnich
+            lub uczestniczenie w różnego rodzaju konferencjach i spotkaniach
+            branżowych.
+          </p>
+          <p>
+            Podsumowując, koło Cyber Security na Wojskowej Akademii Technicznej
+            skupia się na poszerzaniu wiedzy i umiejętności z zakresu
+            cyberbezpieczeństwa, współpracy z innymi kołami naukowymi i firmami
+            oraz popularyzacji tych zagadnień wśród szerszej publiczności. Celem
+            koła jest również udział w różnego rodzaju konkursach, które pozwolą
+            członkom zdobyć praktyczne doświadczenie.
+          </p>
         </div>
+      </div>
+      <div class="xl:mt-0 mt-20">
+        {
+          goalsList.map(({ icon, label }) => (
+            <div class="mb-10 flex items-center">
+              <Image alt="" src={icon} class="w-16" />
+              <span class="ml-10 font-bold">{label}</span>
+            </div>
+          ))
+        }
+      </div>
     </div>
+  </div>
 </section>
 
 <style>
-    .hero-bg {
-        @apply fixed top-1/2 left-3/4 text-gray-700 select-none;
-        transform: translate(-50%, -50%) skew(0deg, 10deg);
-    }
+  .hero-bg {
+    @apply fixed top-1/2 left-3/4 text-gray-700 select-none;
+    transform: translate(-50%, -50%) skew(0deg, 10deg);
+  }
 </style>
 
 <script>
-    import { animate, scroll } from 'motion'
-    const passEl = document.getElementById('pass')
+  import { animate, scroll } from "motion";
+  const passEl = document.getElementById("pass");
 
-    scroll(
-        animate((progress) => {
-            passEl.innerText = '*'.repeat(progress*10)
-            }
-        ),
-        {
-            offset: ["start start", "0.1 start"],
-            target: document.getElementById('hero-section')
-        }
-    )
+  scroll(
+    animate((progress) => {
+      passEl.innerText = "*".repeat(progress * 10);
+    }),
+    {
+      offset: ["start start", "0.1 start"],
+      target: document.getElementById("hero-section"),
+    },
+  );
 </script>

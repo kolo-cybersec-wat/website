@@ -1,1 +1,1 @@
-# WCY Cyber Security Club website prototype 
+# WCY Cyber Security Club website prototype

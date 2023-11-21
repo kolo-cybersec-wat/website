@@ -1,52 +1,54 @@
 ---
-import {Sprite} from 'astro-icon'
+import { Sprite } from "astro-icon";
 import FooterSection from "./FooterSection.astro";
-import {footerSections, footerSocialLinkItems} from "../data/navigation";
-import {createLinkTargetProps} from "../lib/linkUtils";
-import {CONTACT_EMAIL} from "../data/consts";
+import { footerSections, footerSocialLinkItems } from "../data/navigation";
+import { createLinkTargetProps } from "../lib/linkUtils";
+import { CONTACT_EMAIL } from "../data/consts";
 ---
-<div class="mt-20 py-10 px-20 md:flex justify-between border-t border-gray-300">
-    <div class="w-full">
-        <span class="block text-lg">
-            Koło CyberSecurity <br/>
-            Wydziału Cybernetyki WAT
-        </span>
-        <span class="my-2 block text-gray-600">
-            {CONTACT_EMAIL}
-        </span>
-        <div class="text-gray-600">
-            {footerSocialLinkItems.map(({label, href, iconName}) => (
-                    <a
-                            href={href}
-                            {...createLinkTargetProps(true)}
-                            class="flex items-center hover:text-black transition"
-                    >
-                        <Sprite name={iconName} class="w-5 h-5"/>
-                        <span class="ml-2">{label}</span>
-                    </a>
-            ))}
-        </div>
-    </div>
 
-    <div class="mt-10 md:mt-0 grid md:grid-cols-2 gap-10">
-        {
-            footerSections.map(({sectionTitle, linkItems}) => (
-                    <FooterSection
-                            sectionTitle={sectionTitle}
-                            linkItems={linkItems}
-                    />
-            ))
-        }
+<div class="mt-20 py-10 px-20 md:flex justify-between border-t border-gray-300">
+  <div class="w-full">
+    <span class="block text-lg">
+      Koło CyberSecurity <br />
+       Wydziału Cybernetyki WAT
+    </span>
+    <span class="my-2 block text-gray-600">
+      {CONTACT_EMAIL}
+    </span>
+    <div class="text-gray-600">
+      {
+        footerSocialLinkItems.map(({ label, href, iconName }) => (
+          <a
+            href={href}
+            {...createLinkTargetProps(true)}
+            class="flex items-center hover:text-black transition"
+          >
+            <Sprite name={iconName} class="w-5 h-5" />
+            <span class="ml-2">{label}</span>
+          </a>
+        ))
+      }
     </div>
+  </div>
+
+  <div class="mt-10 md:mt-0 grid md:grid-cols-2 gap-10">
+    {
+      footerSections.map(({ sectionTitle, linkItems }) => (
+        <FooterSection sectionTitle={sectionTitle} linkItems={linkItems} />
+      ))
+    }
+  </div>
 </div>
 
-
 <div class="flex justify-between text-gray-600 px-20 py-10">
-    <span class="font-mono text-sm flex items-center">
-        <Sprite name="ion:git-branch-outline" class="w-4 h-4 mr-1"/>
-        <span>32m32ds</span>
-    </span>
-    <span class="text-sm">
-        Built by <a class="hover:underline text-[#F87A70]" href="https://micorix.dev">micorix</a>
-    </span>
+  <span class="font-mono text-sm flex items-center">
+    <Sprite name="ion:git-branch-outline" class="w-4 h-4 mr-1" />
+    <span>32m32ds</span>
+  </span>
+  <span class="text-sm">
+    Built by <a
+      class="hover:underline text-[#F87A70]"
+      href="https://micorix.dev">micorix</a
+    >
+  </span>
 </div>

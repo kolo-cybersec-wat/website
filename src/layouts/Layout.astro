@@ -1,22 +1,22 @@
 ---
-import { Sprite } from 'astro-icon'
+import { Sprite } from "astro-icon";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import DocumentLayout from "./DocumentLayout.astro";
 
 const { title } = Astro.props;
-
 ---
+
 <DocumentLayout title={title}>
-	<Sprite.Provider>
-		<Navbar />
-		<div class="flex flex-col h-full">
-			<div style="flex: 1 0 auto">
-				<slot />
-			</div>
-			<div class="flex-shrink-0">
-				<Footer />
-			</div>
-		</div>
-	</Sprite.Provider>
+  <Sprite.Provider>
+    <Navbar />
+    <div class="flex flex-col h-full">
+      <div style="flex: 1 0 auto">
+        <slot />
+      </div>
+      <div class="flex-shrink-0">
+        <Footer />
+      </div>
+    </div>
+  </Sprite.Provider>
 </DocumentLayout>

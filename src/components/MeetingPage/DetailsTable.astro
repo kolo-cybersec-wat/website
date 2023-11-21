@@ -1,59 +1,56 @@
 ---
-import {getCollection} from 'astro:content';
-import Layout from "../../layouts/Layout.astro";
-
 export interface DetailItem {
-    emoji: string
-    detailName: string
-    detail: string
+  emoji: string;
+  detailName: string;
+  detail: string;
 }
 
 interface Props {
-    detailsList: DetailItem[]
+  detailsList: DetailItem[];
 }
 
-const {detailsList} = Astro.props;
-
-
+const { detailsList } = Astro.props;
 ---
+
 <table class="details-table">
-    {detailsList.map(({emoji, detailName, detail}) => (
-            <tr>
-                <td class="emoji-cell">{emoji}</td>
-                <th>{detailName}</th>
-                <td class="detail-cell">{detail}</td>
-            </tr>
-    ))}
+  {
+    detailsList.map(({ emoji, detailName, detail }) => (
+      <tr>
+        <td class="emoji-cell">{emoji}</td>
+        <th>{detailName}</th>
+        <td class="detail-cell">{detail}</td>
+      </tr>
+    ))
+  }
 </table>
 
 <style>
-    .details-table {
-        @apply w-full sm:w-auto;
-    }
+  .details-table {
+    @apply w-full sm:w-auto;
+  }
 
-    .details-table tr {
-        @apply border-b border-gray-600;
+  .details-table tr {
+    @apply border-b border-gray-600;
+  }
+  .details-table tr:last-of-type {
+    border-bottom: none;
+  }
 
-    }
-    .details-table tr:last-of-type  {
-        border-bottom: none;
-    }
+  .details-table td,
+  .details-table th {
+    @apply py-3 px-2 text-left;
+  }
+  .details-table th {
+    @apply font-normal;
+  }
+  .details-table td {
+    @apply font-semibold;
+  }
 
-    .details-table td, .details-table th {
-        @apply py-3 px-2 text-left;
-    }
-    .details-table th {
-        @apply font-normal;
-    }
-    .details-table td {
-        @apply font-semibold;
-    }
-
-
-    .details-table .emoji-cell {
-        @apply ml-2;
-    }
-    .details-table .detail-cell {
-        @apply pl-6;
-    }
+  .details-table .emoji-cell {
+    @apply ml-2;
+  }
+  .details-table .detail-cell {
+    @apply pl-6;
+  }
 </style>

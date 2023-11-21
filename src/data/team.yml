@@ -6,14 +6,14 @@ boardMembers:
     links:
       linkedIn: https://linkedin.com/in/profile
       github: https://github.com/profile
-  - title: ''
+  - title: ""
     name: Michał Oręziak
     role: Wiceprzewodniczący Koła
     bio: lorem ipsum
     links:
       linkedIn: https://linkedin.com/in/profile
       github: https://github.com/profile
-  - title: ''
+  - title: ""
     name: Julia Ołowniuk
     role: Sekretarz Koła
     bio: lorem ipsum
@@ -49,5 +49,3 @@ members:
     link: https://example.com
     image:
       gravatarUsername: someuser
-
-

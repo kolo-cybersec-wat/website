@@ -1,26 +1,20 @@
 ---
-import {Image} from "astro:assets";
-import aboutImage from '../../../assets/img/about-image.jpg'
-import BoardMemberCard from "../BoardMemberCard.astro";
-// export interface Props {
-//     name: string;
-//     role: string;
-//     bio: string;
-// }
-
-const { boardMembers = [] } = Astro.props;
+import { Image } from "astro:assets";
 ---
+
 <section class="mt-20">
-    <div class="w-4/5 mx-auto">
-      <h2 class="text-3xl text-center font-bold">Członkowie koła</h2>
-      <div class="">
-          <div class="mt-10 flex justify-center flex-wrap">
-              {new Array(100).fill(0).map(boardMember => (
-                  <div class="m-1">
-                      <Image alt="" class="w-10 h-10 rounded-full bg-gray-400" />
-                  </div>
-              ))}
-          </div>
+  <div class="w-4/5 mx-auto">
+    <h2 class="text-3xl text-center font-bold">Członkowie koła</h2>
+    <div class="">
+      <div class="mt-10 flex justify-center flex-wrap">
+        {
+          new Array(100).fill(0).map(() => (
+            <div class="m-1">
+              <Image alt="" class="w-10 h-10 rounded-full bg-gray-400" />
+            </div>
+          ))
+        }
       </div>
     </div>
+  </div>
 </section>
