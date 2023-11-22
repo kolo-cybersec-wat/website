@@ -3,10 +3,12 @@ import { Sprite } from "astro-icon";
 import FooterSection from "./FooterSection.astro";
 import { footerSections, footerSocialLinkItems } from "../data/navigation";
 import { createLinkTargetProps } from "../lib/linkUtils";
-import { CONTACT_EMAIL } from "../data/consts";
+import { CONTACT_EMAIL, GIT_SHA } from "../data/consts";
 ---
 
-<div class="mt-20 py-10 px-20 md:flex justify-between border-t border-gray-300">
+<div
+  class="mt-20 py-10 px-10 md:px-20 md:flex justify-between border-t border-gray-300"
+>
   <div class="w-full">
     <span class="block text-lg">
       Koło CyberSecurity <br />
@@ -43,7 +45,7 @@ import { CONTACT_EMAIL } from "../data/consts";
 <div class="flex justify-between text-gray-600 px-20 py-10">
   <span class="font-mono text-sm flex items-center">
     <Sprite name="ion:git-branch-outline" class="w-4 h-4 mr-1" />
-    <span>32m32ds</span>
+    <span>{GIT_SHA}</span>
   </span>
   <span class="text-sm">
     Built by <a

@@ -1,6 +1,6 @@
 ---
 title: Udział członków koła w ćwiczeniach Cyber Expert Game
-date: 2023-11-22
+date: 2022-11-23
 tags: ["welcome"]
 image: "./assets/udzial-czlonkow-kola-w-cyber-expert-game-2022/article-hero.png"
 ---
@@ -15,9 +15,9 @@ czy Dowództwa Komponentu Wojsk Obrony Cyberprzestrzeni.
 Każdy z wyżej wymienionych zespołów tak zwanych Blue Team otrzymał bliźniacze środowisko,
 którego miał bronić przed atakami przeprowadzonymi przez drużynę Red Team.
 
-W przygotowaniach uczestniczyli między innymi dr inż. Zbigniew Świerczyński (opiekun koła Cyber Security) oraz dr inż. Łukasz Strzelecki.
+W przygotowaniach uczestniczyli między innymi dr inż. Zbigniew Świerczyński (opiekun Koła CyberSecurity) oraz dr inż. Łukasz Strzelecki.
 W tym roku do szeregów zespołu atakującego wcielili się również studenci Wojskowej Akademii Technicznej
-na kierunku kryptologii i cyberbezpieczeństwa, członkowie koła Cyber Security: Weronika Buras, Cezary Bąk,
+na kierunku kryptologii i cyberbezpieczeństwa, członkowie Koła CyberSecurity: Weronika Buras, Cezary Bąk,
 sierż. pchor. Łukasz Czerniszewski oraz Filip Andrejczyk. Uczestniczyli zarówno w fazie zapoznania ze
 środowiskiem przed oficjalnym rozpoczęciem ćwiczeń oraz we właściwej fazie, kiedy to przeprowadzone zostały konkretne scenariusze ataków.
 
@@ -31,4 +31,6 @@ jest największym tego typu wydarzeniem organizowanym w Polsce.
 Możliwość sprawdzenia skuteczności odpierania cyberataków w dobie, kiedy stały się one codziennością.
 Cyberprzestępcy nieustannie wymyślają nowe wektory ataku dlatego tak istotne jest ciągły w rozwój w tej dziedzinie aby móc się im przeciwstawić.
 
+<a href="https://ecsc.mil.pl/pl/articles/6-aktualnosci/cyberexpert-game/" style="word-break: break-all;">
 https://ecsc.mil.pl/pl/articles/6-aktualnosci/cyberexpert-game/
+</a>

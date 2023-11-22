@@ -8,7 +8,12 @@ export interface Props {
 
 const { boardMember } = Astro.props;
 
-const { name, role, bio } = boardMember;
+const {
+  name,
+  role,
+  bio,
+  links: { linkedIn: linkedInLink },
+} = boardMember;
 ---
 
 <div class="">
@@ -16,11 +21,11 @@ const { name, role, bio } = boardMember;
     <h4 class="text-center font-bold text-xl">{name}</h4>
     <span class="text-center block mt-1">{role}</span>
     <div class="flex items-center justify-center mt-2 mb-1">
-      <a class="">
+      <a href={linkedInLink} target="_blank" rel="noreferrer noopener">
         <Sprite name="ps:linkedin" class="w-3 h-3" />
       </a>
     </div>
-    <p class="mt-5 text-sm">
+    <p class="mt-5 text-sm prose">
       {bio}
     </p>
   </div>

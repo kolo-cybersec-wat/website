@@ -11,7 +11,6 @@ const postsCollection = defineCollection({
       tags: z.array(z.string()),
       image: image(),
       imageClassName: z.string().optional(),
-      // image: z.string().optional(),
     }),
 });
 
@@ -21,7 +20,7 @@ const meetingsCollection = defineCollection({
     title: z.string(),
     dateStart: z.coerce.date(),
     dateEnd: z.coerce.date(),
-    // image: z.string().optional(),
+    location: z.string(),
   }),
 });
 

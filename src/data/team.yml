@@ -1,27 +1,41 @@
 boardMembers:
-  - title: plut. pchor.
+  - title: plut. pchor. inż.
     name: Iwo Chorzępa
     role: Przewodniczący Koła
-    bio: lorem ipsum
+    bio: |
+      Współorganizator w funkcji zastępcy przewodniczącego I Ogólnopolskiej Studenckiej
+      Konferencji Naukowej Student Cybernetics Symposium.
+      W ramach działaności Koła brał udział w konkursie organizowanym przez firmę Imperva, w którym zwyciężył.
+      Reprezentant WAT na naradzie szkoleniowej Forensics Winter Camp 3.7E7 organizowanej przez DKWOC,
+      na której zajął 10 miejsce w konkursie CTF.
     links:
-      linkedIn: https://linkedin.com/in/profile
+      linkedIn: https://www.linkedin.com/in/ichorzepa
       github: https://github.com/profile
   - title: ""
     name: Michał Oręziak
     role: Wiceprzewodniczący Koła
-    bio: lorem ipsum
+    bio: |
+      Student drugiego roku informatyki zainteresowany DevSecOps oraz inżynierią oprogramowania.
+      Laureat nagrody najlepsza merytorycznie praca w konkursie organizowanym w ramach Polskiego Forum Teleinformatyki.
+      Zajmował czołowe miejsca w hackathonach m.in. HackYeah, czy NASA Space Apps Challenge Stalowa Wola.
+      Współorganizator meetupów, workshopów i webinarów technologicznych. GitHub Campus Expert.
     links:
-      linkedIn: https://linkedin.com/in/profile
-      github: https://github.com/profile
+      linkedIn: https://linkedin.com/in/micorix
+      github: https://github.com/micorix
   - title: ""
     name: Julia Ołowniuk
     role: Sekretarz Koła
-    bio: lorem ipsum
+    bio: |
+      Studentka trzeciego roku na kierunku Kryptologia i Cyberbezpieczeństwo.
+      Pracowała przy projekcie CyberSecurity of the Future Fundacji Orange dokonując
+      m.in. analizy trendów oraz rynku bezpieczeństwa informatycznego. 
+      Uzyskała stypendium Rektora Wojskowej Akademii Technicznej dla najlepszych studentów.
+      Angażuje się też jako autorka tekstów o tematyce bezpieczeństwa informacji w serwisach WAT.
     links:
-      linkedIn: https://linkedin.com/in/profile
+      linkedIn: https://www.linkedin.com/in/julia-o%C5%82owniuk-aa2878238
       github: https://github.com/profile
 supervisor:
-  title: dr. inż.
+  title: dr inż.
   name: Zbigniew Świerczyński
   bio: |
     Posiada ponad dwudziestoletnie doświadczenie w projektowaniu, wdrażaniu i badaniu bezpieczeństwa, 

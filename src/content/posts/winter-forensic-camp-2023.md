@@ -1,8 +1,9 @@
 ---
 title: Udział w Zawodach CTF podczas Winter Forensic Camp
-date: 2023-11-22
+date: 2023-03-27
 tags: ["welcome"]
-image: "./assets/brak-zaufania-podstawa-bezpieczenstwa-danych-innowatorzy/article-hero.jpg"
+image: "./assets/winter-forensic-camp-2023/article-hero.png"
+imageClassName: object-[right_center]
 ---
 
 W dniach 19-24.03.2023 r. 20 drużyn składających się z ekspertów ds. cyberbezpieczeństwa pracujących w specjalistycznych jednostkach wojskowych
@@ -19,4 +20,6 @@ Z naszego Wydziału, reprezentującego Wojskową Akademię Techniczną, wystawio
 Drużyna studentów z Wojskowej Akademii Technicznej była jedyną drużyna studentów biorących udział w tych zawodach.
 Uplasowała się na 10 miejscu z wynikiem 2350pkt. Drużyna pracowników zajęła 3cie miejsce z wynikiem 3650pkt.
 
-https://wcy.wat.edu.pl/pl/news/ogromny-sukces-wcy-w-zawodach-podczas-forensics-winter-camp
+<a href="https://old.wcy.wat.edu.pl/pl/news/ogromny-sukces-wcy-w-zawodach-podczas-forensics-winter-camp" style="word-break: break-all;">
+https://old.wcy.wat.edu.pl/pl/news/ogromny-sukces-wcy-w-zawodach-podczas-forensics-winter-camp
+</a>
