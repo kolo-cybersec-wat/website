@@ -1,6 +1,6 @@
 ---
 import { Sprite } from "astro-icon";
-import { CONTACT_EMAIL } from "../../../data/consts";
+import {CONTACT_EMAIL, MS_TEAMS_INVITE_URL} from "../../../data/consts";
 ---
 
 <section class="mt-[25vh] mb-20" id="cta-section">
@@ -12,10 +12,10 @@ import { CONTACT_EMAIL } from "../../../data/consts";
         <br />
          Dołącz do zespołu Koła na MS Teams, tam znajdziesz dalsze instrukcje.
         <div class="mt-5">
-          <button class="px-3 py-1 bg-[#464EB8] text-white flex items-center">
+          <a href={MS_TEAMS_INVITE_URL} class="px-3 py-1 bg-[#464EB8] text-white inline-flex items-center">
             <Sprite name="mdi:microsoft-teams" class="text-white w-5 h-5" />
             <span class="ml-2">Dołacz do zespołu na MS Teams</span>
-          </button>
+          </a>
         </div>
       </p>
     </div>
