@@ -26,11 +26,9 @@ boardMembers:
     name: Julia Ołowniuk
     role: Sekretarz Koła
     bio: |
-      Studentka trzeciego roku na kierunku Kryptologia i Cyberbezpieczeństwo.
-      Pracowała przy projekcie CyberSecurity of the Future Fundacji Orange dokonując
-      m.in. analizy trendów oraz rynku bezpieczeństwa informatycznego. 
-      Uzyskała stypendium Rektora Wojskowej Akademii Technicznej dla najlepszych studentów.
-      Angażuje się też jako autorka tekstów o tematyce bezpieczeństwa informacji w serwisach WAT.
+      Studentka trzeciego roku kierunku Kryptologia i Cyberbezpieczeństwo interesująca się cyberbezpieczeństwem, 
+      a w szczególności Informatyką Śledzczą. Z tej dziedziny przygotowała zadanie na zawody CTF organizowane przez 
+      Koło Naukowe CyberSecurity oraz prowadzi LinkedIn Koła. Ponadto, angażuje się jako autorka tekstów o tematyce cyberbezpieczesntwa w serwisach WAT.
     links:
       linkedIn: https://www.linkedin.com/in/julia-o%C5%82owniuk-aa2878238
       github: https://github.com/profile
