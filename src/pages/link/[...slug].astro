@@ -1,0 +1,25 @@
+---
+import shortenedLinks from "../../data/shortner";
+
+
+export const getStaticPaths = () => {
+    return Object.keys(shortenedLinks).map(link => ({
+        params: {slug: link}
+    }))
+}
+
+const {slug} = Astro.params;
+
+const fullUrl = shortenedLinks[slug]
+---
+
+<html>
+<head>
+    <meta http-equiv="refresh" content={`0;URL='${fullUrl}'`}/>
+</head>
+<body>
+    <p class="m-2">
+        Redirecting to {fullUrl}
+    </p>
+</body>
+</html>
