@@ -1,13 +1,41 @@
 ---
 import { Image } from "astro:assets";
 import impervaLogo from "../../../assets/img/partners/imperva-logo.svg";
+import fortinetLogo from "../../../assets/img/partners/fortinet-logo.svg";
+import splunkLogo from "../../../assets/img/partners/splunk.png"
+
+const partners = [
+  {
+    name: 'Imperva',
+    logo: impervaLogo,
+    link: 'https://www.imperva.com/'
+  },
+  {
+    name: 'Fortinet',
+    logo: fortinetLogo,
+    link: 'https://www.fortinet.com/'
+  },
+  {
+    name: 'Splunk',
+    logo: splunkLogo,
+    link: 'https://www.splunk.com/'
+  }
+]
 ---
 
 <section class="mt-20 mb-10" id="partners-section">
   <h2 class="text-sm text-center trailing-loose uppercase tracking-widest">
     Firmy, z którymi współpracowaliśmy
   </h2>
-  <div class="mt-10 flex flex-wrap justify-center">
-    <Image src={impervaLogo} alt="Logo firmy Imperva" />
+  <div class="mt-10 grid md:grid-cols-3">
+    {
+      partners.map(partner => (
+          <div class="m-4 flex items-center justify-center">
+            <a href={partner.link} target="_blank" rel="noopener norefferer" title={partner.name}>
+              <Image src={partner.logo} alt={partner.name} class="w-40" />
+            </a>
+          </div>
+      ))
+    }
   </div>
 </section>

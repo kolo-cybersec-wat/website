@@ -1,36 +1,42 @@
 boardMembers:
-  - title: plut. pchor. inż.
-    name: Iwo Chorzępa
-    role: Przewodniczący Koła
+  - title: ""
+    name: Julia Ołowniuk
+    role: Przewodnicząca Koła
     bio: |
-      Współorganizator w funkcji zastępcy przewodniczącego I Ogólnopolskiej Studenckiej
-      Konferencji Naukowej Student Cybernetics Symposium.
-      W ramach działaności Koła brał udział w konkursie organizowanym przez firmę Imperva, w którym zwyciężył.
-      Reprezentant WAT na naradzie szkoleniowej Forensics Winter Camp 3.7E7 organizowanej przez DKWOC,
-      na której zajął 10 miejsce w konkursie CTF.
+      Studentka trzeciego roku kierunku Kryptologia i Cyberbezpieczeństwo
+      interesująca się cyberbezpieczeństwem, a w szczególności Informatyką Śledzczą. 
+      Z tej dziedziny przygotowała zadanie na zawody CTF, których była współorganizatorką
+      jako członek zarządu Koł Naukowego CyberSecurity oraz prowadzi LinkedIn Koła. 
+      Ponadto, angażuje się jako autorka tekstów o tematyce cyberbezpieczeństwa w serwisach WAT.
+      Była również przewodniczącą komitetu organizacyjnego
+      II Ogólnopolskiej Konferencji Student Cybernetics Symposium WAT, 
+      podczas której była konferansjerką jednej z sesji.
     links:
-      linkedIn: https://www.linkedin.com/in/ichorzepa
+      linkedIn: https://www.linkedin.com/in/julia-o%C5%82owniuk-aa2878238
       github: https://github.com/profile
   - title: ""
     name: Michał Oręziak
     role: Wiceprzewodniczący Koła
     bio: |
       Student drugiego roku informatyki zainteresowany DevSecOps oraz inżynierią oprogramowania.
-      Laureat nagrody najlepsza merytorycznie praca w konkursie organizowanym w ramach Polskiego Forum Teleinformatyki.
-      Zajmował czołowe miejsca w hackathonach m.in. HackYeah, czy NASA Space Apps Challenge Stalowa Wola.
-      Współorganizator meetupów, workshopów i webinarów technologicznych. GitHub Campus Expert.
+      Laureat nagrody "Najlepsza merytorycznie praca" w konkursie organizowanym w ramach Polskiego Forum Teleinformatyki.
+      Zajmował czołowe miejsca w hackathonach m.in. data4good berlin, HackYeah, czy NASA Space Apps Challenge Stalowa Wola.
+      Współorganizator meetupów, workshopów, hackathonów i webinarów technologicznych. 
+      Dwukrotnie wyróżniany na liście T500 (2023, 2024), GitHub Campus Expert, członek rady dyrektorów All Tech is Human University Network.
     links:
       linkedIn: https://linkedin.com/in/micorix
       github: https://github.com/micorix
-  - title: ""
-    name: Julia Ołowniuk
+  - title: kpr. pchor.
+    name: Michalina Moszyńska
     role: Sekretarz Koła
     bio: |
-      Studentka trzeciego roku kierunku Kryptologia i Cyberbezpieczeństwo interesująca się cyberbezpieczeństwem, 
-      a w szczególności Informatyką Śledzczą. Z tej dziedziny przygotowała zadanie na zawody CTF organizowane przez 
-      Koło Naukowe CyberSecurity oraz prowadzi LinkedIn Koła. Ponadto, angażuje się jako autorka tekstów o tematyce cyberbezpieczesntwa w serwisach WAT.
+      Studentka kierunku Kryptologia i Cyberbezpieczeństwo. 
+      Aktywnie zgłębia świat CTF, uczestniczyła w ogólnopolskich konferencjach naukowych,
+      takich jak I edycja SCS (Student Cybernetics Symposium), 
+      gdzie wygłaszała swój projekt, oraz międzynarodowych wydarzeniach, 
+      takich jak "SECOSAFT" i "CADET INOVA" w Rumunii.
     links:
-      linkedIn: https://www.linkedin.com/in/julia-o%C5%82owniuk-aa2878238
+      linkedIn: https://www.linkedin.com/in/michalina-moszy%C5%84ska-827426291/
       github: https://github.com/profile
 supervisor:
   title: dr inż.
