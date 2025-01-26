@@ -1,5 +1,5 @@
 ---
-import { Sprite } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import FooterSection from "./FooterSection.astro";
 import { footerSections, footerSocialLinkItems } from "../data/navigation";
 import { createLinkTargetProps } from "../lib/linkUtils";
@@ -25,7 +25,7 @@ import { CONTACT_EMAIL, GIT_SHA } from "../data/consts";
             {...createLinkTargetProps(true)}
             class="flex items-center hover:text-black transition"
           >
-            <Sprite name={iconName} class="w-5 h-5" />
+            <Icon name={iconName} class="w-5 h-5" />
             <span class="ml-2">{label}</span>
           </a>
         ))
@@ -44,7 +44,7 @@ import { CONTACT_EMAIL, GIT_SHA } from "../data/consts";
 
 <div class="flex justify-between text-gray-600 px-20 py-10">
   <span class="font-mono text-sm flex items-center">
-    <Sprite name="ion:git-branch-outline" class="w-4 h-4 mr-1" />
+    <Icon name="ps:branch" class="w-4 h-4 mr-1" />
     <span>{GIT_SHA}</span>
   </span>
   <span class="text-sm">

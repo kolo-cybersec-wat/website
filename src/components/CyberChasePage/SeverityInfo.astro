@@ -1,5 +1,5 @@
 ---
-import { Sprite } from "astro-icon";
+import { Icon } from "astro-icon/components";
 //
 export const SEVERITY_LEVEL = {
   RADIOACTIVE: "RADIOACTIVE",
@@ -19,22 +19,22 @@ interface SeverityMappingItem {
 const severityMappings: Record<string, SeverityMappingItem> = {
   [SEVERITY_LEVEL.RADIOACTIVE]: {
     name: "radioactive",
-    iconName: "mdi:radioactive",
+    iconName: "solar:danger-bold",
     className: "text-red-500",
   },
   [SEVERITY_LEVEL.HIGH]: {
     name: "high",
-    iconName: "jam:triangle-danger-f",
+    iconName: "solar:danger-triangle-outline",
     className: "text-orange-500",
   },
   [SEVERITY_LEVEL.MODERATE]: {
     name: "moderate",
-    iconName: "ci:warning",
+    iconName: "solar:danger-triangle-outline",
     className: "text-yellow-500",
   },
   [SEVERITY_LEVEL.LOW]: {
     name: "low",
-    iconName: "ic:round-info",
+    iconName: "solar:info-circle-linear",
     className: "text-blue-500",
   },
 };
@@ -50,7 +50,7 @@ const { name, className, iconName } = severityMappings[severityLevel];
 <div class="text-sm text-gray-500 flex items-center">
   <span class="mr-1">severity:</span>
   <span class={`flex items-center ${className}`}>
-    <Sprite name={iconName} class="w-5 h-5" />
+    <Icon name={iconName} class="w-5 h-5" />
     <span class="ml-1 uppercase">{name}</span>
   </span>
 </div>

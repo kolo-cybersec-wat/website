@@ -1,5 +1,5 @@
 ---
-import { Sprite } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import { createLinkTargetProps, navbarLinkItems } from "../data/navigation";
 
 const linkClassName =
@@ -14,12 +14,12 @@ const linkClassName =
       <div class="flex md:hidden justify-between w-full px-10">
         <a href="/">Koło CyberSecurity WAT</a>
         <button id="toggle-menu-btn">
-          <Sprite
-            name="cil:hamburger-menu"
+          <Icon
+            name="solar:hamburger-menu-linear"
             class="w-5 h-5"
             id="menu-open-icon"
           />
-          <Sprite name="cil:x" class="w-5 h-5 hidden" id="menu-close-icon" />
+          <Icon name="solar:close-square-linear" class="w-5 h-5 hidden" id="menu-close-icon" />
         </button>
       </div>
       <ul

@@ -5,95 +5,100 @@ import AboutSection from "../components/LandingPage/sections/AboutSection.astro"
 import GoalsSection from "../components/LandingPage/sections/GoalsSection.astro";
 import CTASection from "../components/LandingPage/sections/CTASection.astro";
 import PartnersSection from "../components/LandingPage/sections/PartnersSection.astro";
+import {Icon} from 'astro-icon/components'
 ---
 
-<div class="min-h-screen bg-gradient-to-br from-stone-100 to-stone-200">
-  <div
-      class="relative min-h-screen px-4 py-12 md:px-6 lg:px-8"
-      style={{
-        backgroundImage: `
-            linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
-            linear-gradient(-45deg, rgba(0,0,0,0.02) 25%, transparent 25%),
-            linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.02) 75%),
-            linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.02) 75%)
+<Layout title="CTF">
+  <div class="mt-20 min-h-screen bg-gradient-to-br from-stone-100 to-stone-200">
+    <div
+        class="relative min-h-screen px-4 py-12 md:px-6 lg:px-8"
+        style={{
+          backgroundImage: `
+            linear-gradient(45deg, #F3F4F6 25%, transparent 25%),
+            linear-gradient(-45deg, #F3F4F6 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #F3F4F6 75%),
+            linear-gradient(-45deg, transparent 75%, #F3F4F6 75%)
           `,
-        backgroundSize: "40px 40px",
-        backgroundPosition: "0 0, 0 20px, 20px -20px, -20px 0px",
-      }}
-  >
-    <div class="max-w-4xl mx-auto space-y-8">
-      <div class="text-center space-y-4">
-        <h2 class="text-2xl font-semibold text-stone-700">zawody</h2>
-        <h1 class="text-4xl md:text-6xl font-bold text-stone-800 tracking-tight">Capture the Flag 2.0</h1>
-      </div>
-
-      <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-8 space-y-6">
-        <p class="text-xl text-center text-stone-700">
-          Zapraszamy do udziału w zawodach CTF 2.0 organizowanych przez Koło Naukowe Cyber Security
-        </p>
-
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-stone-800">Zadania będą wymagały znajomości między innymi:</h3>
-          <ul class="grid md:grid-cols-2 gap-3 text-stone-700">
-            <li class="bg-white/50 p-3 rounded-lg">• analizy podatności</li>
-            <li class="bg-white/50 p-3 rounded-lg">• informatyki śledczej</li>
-            <li class="bg-white/50 p-3 rounded-lg">• kryptografii</li>
-            <li class="bg-white/50 p-3 rounded-lg">• inżynierii wstecznej</li>
-          </ul>
+          backgroundSize: "40px 40px",
+          backgroundPosition: "0 0, 0 20px, 20px -20px, -20px 0px",
+        }}
+    >
+      <div class="max-w-4xl mx-auto space-y-8">
+        <div class="text-center space-y-4">
+          <h2 class="text-2xl font-semibold text-stone-700">zawody</h2>
+          <h1 class="text-4xl md:text-6xl font-bold text-stone-800 tracking-tight">Capture the Flag 2.0</h1>
         </div>
 
-        <div class="space-y-4">
-          <p class="text-stone-700">
-            Zawody typu CTF wymagają również kreatywności oraz umiejętności skutecznego rozwiązywania problemów.
+        <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 md:p-8 space-y-6">
+          <p class="text-xl text-center text-stone-700">
+            Zapraszamy do udziału w zawodach CTF 2.0 <br />
+            organizowanych przez Koło Naukowe Cyber Security <br />
+            dla studentów WCY WAT
           </p>
 
-          <div class="bg-stone-100 p-4 rounded-lg text-stone-600 text-sm">
-            <p>Wyniki uczestników (poza podium) nie zostaną opublikowane.</p>
-            <p>Zadania posiadają różne poziomy trudności.</p>
-            <p>Zespoły 1-2 osobowe.</p>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-4">
-            <h3 class="font-semibold text-stone-800">Szczegóły wydarzenia:</h3>
-            <ul class="space-y-3">
-              <li class="flex items-center gap-2 text-stone-700">
-                <Calendar class="w-5 h-5" />
-                8.03 Sobota
-              </li>
-              <li class="flex items-center gap-2 text-stone-700">
-                <Clock class="w-5 h-5" />
-                9:50 - 13:15
-              </li>
-              <li class="flex items-center gap-2 text-stone-700">
-                <MapPin class="w-5 h-5" />
-                120/65 WAT
-              </li>
-              <li class="flex items-center gap-2 text-stone-700">
-                <Laptop class="w-5 h-5" />
-                Bring your own laptop
-              </li>
+            <h3 class="text-xl font-semibold text-stone-800">Zadania będą wymagały znajomości między innymi:</h3>
+            <ul class="grid md:grid-cols-2 gap-3 text-stone-700">
+              <li class="bg-white/50 p-3 rounded-lg">• analizy podatności</li>
+              <li class="bg-white/50 p-3 rounded-lg">• informatyki śledczej</li>
+              <li class="bg-white/50 p-3 rounded-lg">• kryptografii</li>
+              <li class="bg-white/50 p-3 rounded-lg">• inżynierii wstecznej</li>
             </ul>
           </div>
 
-          <div class="flex flex-col items-center justify-center space-y-3">
-            <p class="font-semibold text-stone-800">Zapisy:</p>
-            <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kiH18kOby77Kpg18rmZXUFK0JPzqBV.png"
-                alt="QR Code for registration"
-                width={150}
-                height={150}
-                class="bg-white p-2 rounded-lg"
-            />
-            <p class="text-stone-600 text-sm">Zeskanuj aby się zarejestrować</p>
-          </div>
-        </div>
+          <div class="space-y-4">
+            <p class="text-stone-700">
+              Zawody typu CTF wymagają również kreatywności oraz umiejętności skutecznego rozwiązywania problemów.
+            </p>
 
-        <div class="text-center pt-4">
-          <p class="text-xl font-semibold text-stone-800">Do zobaczenia!</p>
+            <div class="bg-stone-100 p-4 rounded-lg text-stone-600 text-sm">
+              <p>Wyniki uczestników (poza podium) nie zostaną opublikowane.</p>
+              <p>Zadania posiadają różne poziomy trudności.</p>
+              <p>W CTFie można brać udział samodzielnie lub w 2 osobowych zespołach.</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <h3 class="font-semibold text-stone-800">Szczegóły wydarzenia:</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-2 text-stone-700">
+                  <Icon name="solar:calendar-minimalistic-outline" class="w-5 h-5" />
+                  8.03 Sobota
+                </li>
+                <li class="flex items-center gap-2 text-stone-700">
+                  <Icon name="solar:clock-circle-broken" class="w-5 h-5" />
+                  9:50 - 13:15
+                </li>
+                <li class="flex items-center gap-2 text-stone-700">
+                  <Icon name="solar:map-point-linear" class="w-5 h-5" />
+                  120/65 WAT
+                </li>
+                <li class="flex items-center gap-2 text-stone-700">
+                  <Icon name="solar:laptop-3-outline" class="w-5 h-5" />
+                  Bring your own laptop
+                </li>
+              </ul>
+            </div>
+
+            <div class="flex flex-col items-center justify-center space-y-3">
+              <p class="font-semibold text-stone-800">Zapisy:</p>
+              <p class="text-stone-600 text-sm">Poprzez MS Forms (wymagane zalogowanie przez konto WAT):</p>
+              <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="underline"
+                  href="https://forms.office.com/e/5TFerkM7Q2">
+                    https://forms.office.com/e/5TFerkM7Q2
+              </a>
+            </div>
+          </div>
+
+          <div class="text-center pt-4">
+            <p class="text-xl font-semibold text-stone-800">Zaproś znajomych i razem spróbujcie sił w studenckim CTF. <br />Powodzenia!</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</Layout>
