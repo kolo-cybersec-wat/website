@@ -47,10 +47,10 @@ export const navbarLinkItems: LinkItem[] = [
     href: "/calendar",
     label: "Terminarz",
   },
-  {
-    href: "/ctf",
-    label: "CTF",
-  },
+  // {
+  //   href: "/ctf",
+  //   label: "CTF",
+  // },
 ];
 
 export const footerSocialLinkItems: SocialLinkItem[] = [

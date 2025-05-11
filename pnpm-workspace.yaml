@@ -1,0 +1,3 @@
+onlyBuiltDependencies:
+  - '@zach.codes/react-calendar'
+  - esbuild
