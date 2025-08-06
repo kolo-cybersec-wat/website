@@ -1,0 +1,45 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import {createExcerptFromPost} from "../../lib/excerpt";
+const posts = await getCollection("cyberChase");
+const postsWithAuthors = await Promise.all(
+    posts.map(async (post) => {
+      const authorEntry = await getEntry('authors', post.data.author.id);
+      return {
+        ...post,
+        author: authorEntry
+      };
+    })
+);
+
+const sortedpostsWithAuthors = postsWithAuthors.sort((a, b) => b.data.date - a.data.date);
+---
+
+<Layout title="Cyber chase">
+  <div class="mt-32 w-4/5 md:w-1/2 mx-auto">
+    <h1 class="text-4xl text-center">Cyber chase</h1>
+    <div class="mt-10 grid gap-10">
+      {
+        postsWithAuthors.map((post) => (
+            <a href={`/cyber-chase/${post.slug}`} class="block group">
+              <h3 class="text-lg font-semibold group-hover:underline">{post.data.title}</h3>
+              <span class="mt-1 text-sm text-gray-500 flex items-center">
+              <span class="mr-1 gap-x-5 flex">
+                <span>autor: <span class="font-bold">{post.author.data.name}</span></span>
+                <span>data: <span class="font-bold">{post.data.date.toLocaleDateString("pl-PL")}</span></span>
+              </span>
+            </span>
+              <p class="my-2">
+                {createExcerptFromPost(post)}
+              </p>
+              <span class="text-gray-500 text-sm">tagi:
+                {post.data.tags.map(tag => `#${tag}`).join(', ')}
+                </span>
+            </a>
+        ))
+      }
+    </div>
+  </div>
+</Layout>
+

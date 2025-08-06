@@ -38,11 +38,10 @@ export const navbarLinkItems: LinkItem[] = [
     href: "/team",
     label: "Członkowie",
   },
-  // see _cyber-chase.astro file
-  // {
-  //     href: '/cyber-chase',
-  //     label: 'Cyber chase'
-  // },
+  {
+      href: '/cyber-chase',
+      label: 'Cyber chase'
+  },
   {
     href: "/calendar",
     label: "Terminarz",

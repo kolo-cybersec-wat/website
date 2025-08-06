@@ -1,6 +1,13 @@
 // https://docs.astro.build/en/guides/content-collections/
 
-import { z, defineCollection } from "astro:content";
+import {z, defineCollection, reference} from "astro:content";
+
+const authorsCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        name: z.string(),
+    }),
+});
 
 const postsCollection = defineCollection({
   type: "content",
@@ -11,6 +18,16 @@ const postsCollection = defineCollection({
       tags: z.array(z.string()),
       image: image(),
       imageClassName: z.string().optional(),
+    }),
+});
+
+const cyberChaseCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+        author: reference('authors'),
+        date: z.coerce.date(),
+        tags: z.array(z.string()),
     }),
 });
 
@@ -25,6 +42,8 @@ const meetingsCollection = defineCollection({
 });
 
 export const collections = {
+  authors: authorsCollection,
   posts: postsCollection,
+  cyberChase: cyberChaseCollection,
   meetings: meetingsCollection,
 };
