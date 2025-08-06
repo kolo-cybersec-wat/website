@@ -1,8 +1,8 @@
 ---
-import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
-import Layout from "../../layouts/Layout.astro";
-const posts = await getCollection("posts");
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+const posts = await getCollection('posts');
 const sortedPosts = posts.sort((a, b) => b.data.date - a.data.date);
 ---
 

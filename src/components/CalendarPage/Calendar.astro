@@ -1,21 +1,21 @@
 ---
-import { getCollection } from "astro:content";
-import { EventInput } from "@fullcalendar/core";
-import "tippy.js/dist/tippy.css";
+import { getCollection } from 'astro:content';
+import type { EventInput } from '@fullcalendar/core';
+import 'tippy.js/dist/tippy.css';
 
-import otherCalendarEvents from "../../data/calendarEvents.yml";
+import otherCalendarEvents from '../../data/calendarEvents.yml';
 
-const meetings = await getCollection("meetings");
+const meetings = await getCollection('meetings');
 const meetingEvents = meetings.map(
-  (meeting) =>
-    ({
-      groupId: "meeting",
-      title: meeting.data.title,
-      start: meeting.data.dateStart,
-      end: meeting.data.dateEnd,
-      url: `/meetings/${meeting.slug}`,
-      color: "#1D4ED8",
-    }) satisfies EventInput,
+	(meeting) =>
+		({
+			groupId: 'meeting',
+			title: meeting.data.title,
+			start: meeting.data.dateStart,
+			end: meeting.data.dateEnd,
+			url: `/meetings/${meeting.slug}`,
+			color: '#1D4ED8',
+		}) satisfies EventInput,
 );
 
 const calendarEvents: EventInput = [...meetingEvents, ...otherCalendarEvents];

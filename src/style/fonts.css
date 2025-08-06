@@ -1,19 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,latin-ext);
 
 @font-face {
-  font-family: "WAT";
-  font-weight: 400;
-  src: url("/fonts/WATstyle-Regular.ttf") format("truetype");
+	font-family: "WAT";
+	font-weight: 400;
+	src: url("/fonts/WATstyle-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "WAT";
-  font-weight: 300;
-  src: url("/fonts/WATstyle-Light.ttf") format("truetype");
+	font-family: "WAT";
+	font-weight: 300;
+	src: url("/fonts/WATstyle-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: "WAT";
-  font-weight: 300;
-  font-style: italic;
-  src: url("/fonts/WATstyle-LigIta.ttf") format("truetype");
+	font-family: "WAT";
+	font-weight: 300;
+	font-style: italic;
+	src: url("/fonts/WATstyle-LigIta.ttf") format("truetype");
 }

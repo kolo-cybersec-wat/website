@@ -1,46 +1,46 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 //
 export const SEVERITY_LEVEL = {
-  RADIOACTIVE: "RADIOACTIVE",
-  HIGH: "HIGH",
-  MODERATE: "MODERATE",
-  LOW: "LOW",
+	RADIOACTIVE: 'RADIOACTIVE',
+	HIGH: 'HIGH',
+	MODERATE: 'MODERATE',
+	LOW: 'LOW',
 };
 
 type SeverityLevel = string;
 //
 interface SeverityMappingItem {
-  name: string;
-  iconName: string;
-  className: string;
+	name: string;
+	iconName: string;
+	className: string;
 }
 
 const severityMappings: Record<string, SeverityMappingItem> = {
-  [SEVERITY_LEVEL.RADIOACTIVE]: {
-    name: "radioactive",
-    iconName: "solar:danger-bold",
-    className: "text-red-500",
-  },
-  [SEVERITY_LEVEL.HIGH]: {
-    name: "high",
-    iconName: "solar:danger-triangle-outline",
-    className: "text-orange-500",
-  },
-  [SEVERITY_LEVEL.MODERATE]: {
-    name: "moderate",
-    iconName: "solar:danger-triangle-outline",
-    className: "text-yellow-500",
-  },
-  [SEVERITY_LEVEL.LOW]: {
-    name: "low",
-    iconName: "solar:info-circle-linear",
-    className: "text-blue-500",
-  },
+	[SEVERITY_LEVEL.RADIOACTIVE]: {
+		name: 'radioactive',
+		iconName: 'solar:danger-bold',
+		className: 'text-red-500',
+	},
+	[SEVERITY_LEVEL.HIGH]: {
+		name: 'high',
+		iconName: 'solar:danger-triangle-outline',
+		className: 'text-orange-500',
+	},
+	[SEVERITY_LEVEL.MODERATE]: {
+		name: 'moderate',
+		iconName: 'solar:danger-triangle-outline',
+		className: 'text-yellow-500',
+	},
+	[SEVERITY_LEVEL.LOW]: {
+		name: 'low',
+		iconName: 'solar:info-circle-linear',
+		className: 'text-blue-500',
+	},
 };
 
 interface Props {
-  severityLevel: SeverityLevel;
+	severityLevel: SeverityLevel;
 }
 const { severityLevel } = Astro.props;
 //

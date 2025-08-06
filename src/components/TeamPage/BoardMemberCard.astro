@@ -1,18 +1,18 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 export interface Props {
-  name: string;
-  role: string;
-  bio: string;
+	name: string;
+	role: string;
+	bio: string;
 }
 
 const { boardMember } = Astro.props;
 
 const {
-  name,
-  role,
-  bio,
-  links: { linkedIn: linkedInLink },
+	name,
+	role,
+	bio,
+	links: { linkedIn: linkedInLink },
 } = boardMember;
 ---
 

@@ -1,19 +1,21 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import {createExcerptFromPost} from "../../lib/excerpt";
-const posts = await getCollection("cyberChase");
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { createExcerptFromPost } from '../../lib/excerpt';
+const posts = await getCollection('cyberChase');
 const postsWithAuthors = await Promise.all(
-    posts.map(async (post) => {
-      const authorEntry = await getEntry('authors', post.data.author.id);
-      return {
-        ...post,
-        author: authorEntry
-      };
-    })
+	posts.map(async (post) => {
+		const authorEntry = await getEntry('authors', post.data.author.id);
+		return {
+			...post,
+			author: authorEntry,
+		};
+	}),
 );
 
-const sortedpostsWithAuthors = postsWithAuthors.sort((a, b) => b.data.date - a.data.date);
+const sortedpostsWithAuthors = postsWithAuthors.sort(
+	(a, b) => b.data.date - a.data.date,
+);
 ---
 
 <Layout title="Cyber chase">

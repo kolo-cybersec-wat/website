@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Calendar from "../components/CalendarPage/Calendar.astro";
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Calendar from '../components/CalendarPage/Calendar.astro';
 
-const meetings = await getCollection("meetings");
+const meetings = await getCollection('meetings');
 const calendarEvents = meetings.map((meeting) => ({
-  title: meeting.data.title,
-  start: meeting.data.dateStart,
-  end: meeting.data.dateEnd,
+	title: meeting.data.title,
+	start: meeting.data.dateStart,
+	end: meeting.data.dateEnd,
 }));
 ---
 

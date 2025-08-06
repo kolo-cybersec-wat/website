@@ -1,15 +1,15 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import DetailsTable from "../../components/MeetingPage/DetailsTable.astro";
-import { LINKS } from "../../data/navigation";
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import DetailsTable from '../../components/MeetingPage/DetailsTable.astro';
+import { LINKS } from '../../data/navigation';
 
 export async function getStaticPaths() {
-  const meetings = await getCollection("meetings");
-  return meetings.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+	const meetings = await getCollection('meetings');
+	return meetings.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
 }
 
 const { entry } = Astro.props;
@@ -19,31 +19,31 @@ const { Content } = await entry.render();
 const parsedDateStart = new Date(entry.data.dateStart);
 const parsedDateEnd = new Date(entry.data.dateEnd);
 
-const LOCALE = "pl-PL";
+const LOCALE = 'pl-PL';
 const timeFormatOptions: Partial<Intl.DateTimeFormatOptions> = {
-  hour: "2-digit",
-  minute: "2-digit",
+	hour: '2-digit',
+	minute: '2-digit',
 };
 
 const date = parsedDateStart.toLocaleDateString(LOCALE);
 const startTime = parsedDateStart.toLocaleTimeString(LOCALE, timeFormatOptions);
 const endTime = parsedDateEnd.toLocaleTimeString(LOCALE, timeFormatOptions);
 const detailsList = [
-  {
-    emoji: "📅",
-    detailName: "Data",
-    detail: date,
-  },
-  {
-    emoji: "⌚",
-    detailName: "Kiedy?",
-    detail: `${startTime} - ${endTime}`,
-  },
-  {
-    emoji: "📍",
-    detailName: "Gdzie?",
-    detail: entry.data.location,
-  },
+	{
+		emoji: '📅',
+		detailName: 'Data',
+		detail: date,
+	},
+	{
+		emoji: '⌚',
+		detailName: 'Kiedy?',
+		detail: `${startTime} - ${endTime}`,
+	},
+	{
+		emoji: '📍',
+		detailName: 'Gdzie?',
+		detail: entry.data.location,
+	},
 ];
 ---
 

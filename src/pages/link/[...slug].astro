@@ -1,16 +1,15 @@
 ---
-import shortenedLinks from "../../data/shortner";
-
+import shortenedLinks from '../../data/shortner';
 
 export const getStaticPaths = () => {
-    return Object.keys(shortenedLinks).map(link => ({
-        params: {slug: link}
-    }))
-}
+	return Object.keys(shortenedLinks).map((link) => ({
+		params: { slug: link },
+	}));
+};
 
-const {slug} = Astro.params;
+const { slug } = Astro.params;
 
-const fullUrl = shortenedLinks[slug]
+const fullUrl = shortenedLinks[slug];
 ---
 
 <html>

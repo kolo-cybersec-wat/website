@@ -1,9 +1,9 @@
 ---
-import { LinkItem } from "../types";
-import { createLinkTargetProps } from "../data/navigation";
+import type { LinkItem } from '../types';
+import { createLinkTargetProps } from '../data/navigation';
 export interface Props {
-  sectionTitle: string;
-  linkItems: LinkItem[];
+	sectionTitle: string;
+	linkItems: LinkItem[];
 }
 
 const { sectionTitle, linkItems } = Astro.props;

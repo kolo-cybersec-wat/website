@@ -1,20 +1,20 @@
 ---
-import {getCollection, getEntry} from "astro:content";
-import Layout from "../../layouts/Layout.astro";
-import { Image } from "astro:assets";
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
-  const posts = await getCollection("cyberChase");
-  return posts.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+	const posts = await getCollection('cyberChase');
+	return posts.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const author = await getEntry(entry.data.author)
+const author = await getEntry(entry.data.author);
 ---
 
 <Layout title={`${entry.data.title} - aktualności koła WCY WAT`}>

@@ -1,7 +1,7 @@
-import {MS_TEAMS_INVITE_URL} from "./consts";
+import { MS_TEAMS_INVITE_URL } from './consts';
 
 const shortenedLinks = {
-    'ms-teams': MS_TEAMS_INVITE_URL,
-}
+	'ms-teams': MS_TEAMS_INVITE_URL,
+};
 
-export default shortenedLinks
+export default shortenedLinks;
